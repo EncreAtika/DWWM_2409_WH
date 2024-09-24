@@ -1,51 +1,40 @@
-﻿using System;
-
-namespace TriDeNombres
+﻿internal class Program
 {
-    internal class Program
+    private static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-         int A;
-         int B;
-         int C;
+        Console.WriteLine("TriDeNombres");
 
-            Console.WriteLine("Bonjour, Veuillez saisire le nombre A : ");
-            A = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("A = " + A );
-           
-            Console.WriteLine("Veuillez saisir le nombre B : ");
-            B = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("B = " + B);
-           
-            Console.WriteLine("Veuillez saisir le nombre C : ");
-            C = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("C = " + C);
-       
-        if (A<B && B<C)  {
-            Console.WriteLine("Voici vos nombres dans l'ordre croissant : " + A + " " + B + " " + C );
-        }
+        // VARIABLES
 
-        else if (A<C && C<B){
-            Console.WriteLine("Voici vos nombres dans l'ordre croissant : " + A + " " + C + " " + B);
-        }
-        
-         else if (B<A && A<C){
-            Console.WriteLine("Voici vos nombres dans l'ordre croissant : " + B + " " + A + " " + C);
-        }
+        int numA;
+        int numB;
+        int numC;
+        int[] nombres;
+        string saisieUtilisateur;
 
-         else if (B<C && C<A){
-            Console.WriteLine("Voici vos nombres dans l'ordre croissant : " + B + " " + C + " " + A);
-        }
+        // TRAITEMENT 
+        Console.WriteLine("Entrez le premier nombre");
+        saisieUtilisateur = Console.ReadLine(); // Récupération d'une saisie utilisateur
+        numA = int.Parse(saisieUtilisateur);
 
-         else if (C<B && B<A){
-            Console.WriteLine("Voici vos nombres dans l'ordre croissant : " + C + " " + B + " " + A);
-        }
+        Console.WriteLine("Entrez le deuxième nombre");
+        saisieUtilisateur = Console.ReadLine();
+        numB = int.Parse(saisieUtilisateur);
 
-         else if (C<A && A<B){
-            Console.WriteLine("Voici vos nombres dans l'ordre croissant : " + C + " " + A + " " + B);
-        }
-        
-         }
+        Console.WriteLine("Entrez le troisième nombre");
+        saisieUtilisateur = Console.ReadLine();
+        numC = int.Parse(saisieUtilisateur);
+
+        nombres = [numA, numB, numC];
+
+         Array.Sort(nombres);
+
+         // AFFICHAGE
+
+            for (int i = 0; i < nombres.Length; i++)
+            {
+                Console.Write(nombres[i] + " ");
+            }
+            Console.ReadLine();
     }
-} 
+}
