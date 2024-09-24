@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EsTuMajeur", "EsTuMajeur\EsTuMajeur.csproj", "{6E584188-A5F9-4796-A3C9-1B0C48084349}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EsTuMajeur", "EsTuMajeur\EsTuMajeur.csproj", "{6E584188-A5F9-4796-A3C9-1B0C48084349}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaRetraite", "MaRetraite\MaRetraite.csproj", "{CF076A90-767B-4015-BB0A-6C080DD8A909}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaRetraite", "MaRetraite\MaRetraite.csproj", "{CF076A90-767B-4015-BB0A-6C080DD8A909}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TriDeNombres", "..\TriDeNombres\TriDeNombres.csproj", "{90A036DA-2850-4518-BC24-54EA1BBD8D36}"
 EndProject
