@@ -1,13 +1,13 @@
 ﻿/*
 L'utilisateur entre un mot de passe
 Le programme contrôle si le mot de passe respecte les règles en vigueur
-- plus de 20 caractères,
+- Entre 12 et 20 caractères le mot de passe contient au moins:
     ET Au moins 1 minuscule
     ET Au moins 1 majuscule
     ET Au moins 1 chiffre
     ET Au moins 1 caractère spécial
 OU
-- 20 caractères minimum
+- Plus de 20 caractères :
     ET Au moins 1 minuscule
     ET Au moins 1 majuscule
     ET Au moins 1 chiffre
@@ -45,7 +45,7 @@ namespace MotDepasse_20
                 Regex.IsMatch(motDePasse, regexMajuscules) &&
                 Regex.IsMatch(motDePasse, regexChiffres) &&
                 Regex.IsMatch(motDePasse, regexCaracteresSpeciaux) &&
-                motDePasse.Length > 20
+                motDePasse.Length >=12 && motDePasse.Length <20 || motDePasse.Length >20
             )
             
             {
@@ -59,3 +59,4 @@ namespace MotDepasse_20
         }
     }
 }
+
