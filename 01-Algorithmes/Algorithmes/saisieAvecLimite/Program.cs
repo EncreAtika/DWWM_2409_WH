@@ -8,7 +8,7 @@
 
             // VARIABLES
 
-            string motDePasse;
+            string ?motDePasse;
             string formation = "formation";
             int tentatives = 0;
 
@@ -21,8 +21,8 @@
 
                     if (motDePasse == formation) { 
                         Console.WriteLine("Vous ête connecté !");
-                            break;
-                     }
+                    break;
+                }
 
                         else { 
                             Console.WriteLine("Mot de Passe invalide, Veuillez recommencer :");
