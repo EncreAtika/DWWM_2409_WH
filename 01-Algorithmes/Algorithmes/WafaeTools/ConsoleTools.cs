@@ -12,6 +12,8 @@ namespace WafaeTools
 
             bool saisieOK;
 
+
+
             do
             {
                 Console.WriteLine(_question);
@@ -22,16 +24,44 @@ namespace WafaeTools
 
                 // valeurRetour = int.Parse(saisieUtilisateur);
                 // valeurRetour = Convert.ToInt32(saisieUtilisateur);
-    
 
-                if (!saisieOK) 
+
+                if (!saisieOK)
                 {
                     Console.WriteLine("Saisie invalide, recommencez !");
                 }
 
             } while (!saisieOK);
 
-            return valeurRetour;    
+            return valeurRetour;
+
+        }
+
+        public static float DemanderNombrepositif(string _question)
+        {
+            string saisieUtilisateur;
+
+            float superPositif;
+
+            bool saisieOK;
+
+            do
+            {
+                Console.WriteLine(_question);
+
+                saisieUtilisateur = Console.ReadLine() ?? "";
+
+                saisieOK = float.TryParse(saisieUtilisateur, out superPositif) && superPositif >= 0;
+
+                if (!saisieOK)
+                {
+                    Console.WriteLine("Le nombre est incorrect");
+                }
+
+             
+            } while (!saisieOK);
+            return superPositif;
         }
     }
 }
+
