@@ -44,8 +44,9 @@ namespace MotDepasse_20
                 Regex.IsMatch(motDePasse, regexMinuscules) &&
                 Regex.IsMatch(motDePasse, regexMajuscules) &&
                 Regex.IsMatch(motDePasse, regexChiffres) &&
-                Regex.IsMatch(motDePasse, regexCaracteresSpeciaux) &&
-                motDePasse.Length >=12 && motDePasse.Length <20 || motDePasse.Length >20
+                motDePasse.Length >= 12 &&
+               (Regex.IsMatch(motDePasse, regexCaracteresSpeciaux) || motDePasse.Length >= 20) 
+                
             )
             
             {
