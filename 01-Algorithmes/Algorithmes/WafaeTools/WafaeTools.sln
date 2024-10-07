@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WafaeTools", "WafaeTools.csproj", "{267B97CB-6424-40B6-9C2E-6EF53B3886F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WafaeTools", "WafaeTools.csproj", "{267B97CB-6424-40B6-9C2E-6EF53B3886F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NombrePremier", "..\NombrePremier\NombrePremier.csproj", "{03CA6ABD-4378-4063-A94E-1C51B360698E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{267B97CB-6424-40B6-9C2E-6EF53B3886F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{267B97CB-6424-40B6-9C2E-6EF53B3886F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{267B97CB-6424-40B6-9C2E-6EF53B3886F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03CA6ABD-4378-4063-A94E-1C51B360698E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03CA6ABD-4378-4063-A94E-1C51B360698E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03CA6ABD-4378-4063-A94E-1C51B360698E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03CA6ABD-4378-4063-A94E-1C51B360698E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
