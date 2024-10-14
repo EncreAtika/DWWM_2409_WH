@@ -19,14 +19,16 @@
                     BudgetBarnabe = int.Parse(Console.ReadLine());
 
                 }
-                while ( magasin > 0 );
+                while ( magasin < 0 );
                 return;
                 
             }
-        
-            while ( magasin > 0 );  
-            
-            }
+
+            while (magasin > 0);
+
+        }
 
     }
-}
+}                                           
+
+
