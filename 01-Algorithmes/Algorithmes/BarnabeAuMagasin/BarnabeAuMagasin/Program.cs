@@ -5,27 +5,25 @@
         static void Main(string[] args)
         {
             Console.WriteLine("Barnabé fait du Shopping!");
-
-            int BudgetBarnabe;
+            int budgetBarnabe;
             int magasin = 0;
 
-            do
-            {
+            Console.WriteLine("Veullez saisir le budget de Barnabé : ");
+            budgetBarnabe = int.Parse(Console.ReadLine());
+            
+            while ( budgetBarnabe > 1) 
+            { 
+                budgetBarnabe = (budgetBarnabe - (budgetBarnabe /2) )- 1;
                 magasin++;
-
-                do
-                {
-                    Console.WriteLine("Saissez la somme initiale que possède Barnabé pour son shopping : ");
-                    BudgetBarnabe = int.Parse(Console.ReadLine());
-
-                }
-                while ( magasin < 0 );
-                return;
-                
+                Console.WriteLine("Magasin N°" + magasin + ". Il reste " + budgetBarnabe + " Euro(s).");
             }
-
-            while (magasin > 0);
-
+           
+            if (budgetBarnabe == 0) 
+            {
+                Console.WriteLine("Avec son Budget initial Barnabé a visite " + magasin + " .");
+            }
+           
+            
         }
 
     }
