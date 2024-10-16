@@ -31,85 +31,95 @@
 
 ## 6. Le programme remercie l'utilisateur et se termine.
 */
+using EnregistrementDUtilisateurs;
 
-namespace EnregistrementDUtilisateurs
+namespace Users.ConsoleApp.Objects
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enregistrement d'utilisateurs (gestion avec Listes)");
+            Console.WriteLine("Enregistrement d'utilisateurs (gestion avec Objet Métier).");
 
-            //VARIABLES
-
-            bool majeur;
-            bool dateValide;
-            
-            ConsoleKey continuerO_N;
-            
-            DateTime formatDate;
-            DateTime ajd = new DateTime();
-            
-            int age = 0;
-
-            List<string[]>utilisateur = new();
-                // Dans chaque cas il y aura un tableau
-            
-            string? metierCouleur = null;
-            //Le point d'interrogation derrière string permet la catégorie nullable
-            string saisieDate;
+            //Variable
             string saisieNomPrenom;
+            string saisieDate;
+            string? metierCouleur = null;
+            ConsoleKey continuerO_N;
+            List<Utilisateur> utilisateurs = new();
 
-            //TRAITEMENT
-
+            //Traitement
             do
             {
-                Console.WriteLine("Saisissez le nom et le prénom : ");
-                saisieNomPrenom = Console.ReadLine();
 
-                Console.WriteLine("Saisissez la dâte de naissance correspondante en jour/mois/année : ");
-                saisieDate = Console.ReadLine();
-
-                if (DateTime.TryParse(saisieDate, out formatDate))
+                try
                 {
-                    TimeSpan intervalle = ajd - formatDate;
-                    // Permet de calculer l'âge.
-                    age = (int)(intervalle.Days / 365.25);
+                    Console.WriteLine("Saisissez le nom et Prénom.");
+                    saisieNomPrenom = Console.ReadLine();
+
+                    Console.WriteLine("Saisissez la date de naissane, jour/mois/année.");
+                    saisieDate = Console.ReadLine();
+
+                    Utilisateur unUtilisateur = new Utilisateur(saisieNomPrenom, saisieDate);
+
+                    if (unUtilisateur.IsMajeur())
+                    {
+                        Console.WriteLine("Votre metier ?");
+                        metierCouleur = Console.ReadLine();
+                        unUtilisateur.SetMetier(metierCouleur);
+                    }
+                    else
+                    {
+                        Console.WriteLine("couleur préféré ?");
+                        metierCouleur = Console.ReadLine();
+                        unUtilisateur.SetCouleurPreferee(metierCouleur);
+                    }
+
+
+                    utilisateurs.Add(unUtilisateur);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
                 }
 
-                if (age <= 0)
-                {
-                    Console.WriteLine("Saisie non valide.");
-                }
+                Console.WriteLine("Voulez vous saisir un autre utilisateur : N/O ?");
 
-                else if (age < 18)
-                {
-                    Console.WriteLine("Quelle est votre couleur préférée ? ");
-                    metierCouleur = Console.ReadLine();
-                }
-
-                else
-                {
-                    Console.WriteLine("Quel est votre métier ?");
-                    metierCouleur = Console.ReadLine();
-                }
-
-                string[] utilisateurs = [saisieNomPrenom, saisieDate + "(" + age + ")", metierCouleur];
-                Console.WriteLine("Voulez cous saisir un autre utilisateur ? Oui ou NON ? ");
                 continuerO_N = Console.ReadKey(true).Key;
             }
-
             while (continuerO_N == ConsoleKey.O);
-            
-            
-            
-            
-            
+
+
+            // Affichage de la liste des utilisateurs
+
+            // List<Utilisateur]> utilisateurs = new();
+            foreach (Utilisateur utilisateur in utilisateurs)
+            {
+                Console.Write("Nom et Prénom : " + utilisateur.GetNomComplet() + " - ");
+
+                Console.Write(
+                    "Date de naissance (âge): " +
+                    utilisateur.GetDateDeNaissance() +
+                    " (" + utilisateur.GetAge() + ") - "
+                    );
+
+                Console.WriteLine(utilisateur.GetCouleurOuMetier());
+
+
+            }
 
 
 
+
+            /*List<Utilisateur> resultat = utilisateurs.FindAll(u => u.IsMajeur() && u.GetDateDeNaissance() == DateTime.Now.ToShortDateString());
+
+            foreach (Utilisateur u in utilisateurs)
+            {
+                if(u.IsMajeur() && u.GetDateDeNaissance() == DateTime.Now.ToShortDateString())
+                {
+                    resultat.Add(u);
+                }
+            }*/
         }
     }
 }
-
-
