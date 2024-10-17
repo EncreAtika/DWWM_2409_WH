@@ -4,20 +4,40 @@
     Si oui, afficher la valeur de l’indice correspondant. Sinon, 
     afficher « Nombre non trouvé ».
 */
-namespace RechercheDUnNombreTableau
+internal class Program
 {
-    internal class Program
+    private static void Main(string[] args)
     {
-        static void Main(string[] args)
+        Console.WriteLine("Recherche d'un nombre entier dans untableau :");
+
+        //VARIABLES:
+
+        int[] monTableau = new int[] { 8, 16, 32, 64, 128, 256, 512 };
+        int nombreSaisi;
+        int theCase = -1;
+        bool leNombre = false;
+
+        //TRAITEMENT:
+
+        Console.WriteLine("Veuillez saisir un nombre: ");
+        nombreSaisi = int.Parse(Console.ReadLine());
+
+        for (int i = 0; i < monTableau.Length; i++)
+
         {
-            Console.WriteLine("Recherche d'un nombre entier dans untableau :");
-            
-            int[] monTableau = new int []{ 8, 16, 32, 64, 128, 256, 512 };
+            if (nombreSaisi == monTableau[i])
+
+            {
+                Console.WriteLine("Le nombre " + nombreSaisi + " figure bien dans notre tableau");
+                leNombre = true;
+
+            }
+            else
+            { 
+                Console.WriteLine("Le nombre " + nombreSaisi + " ne figure pas dans notre tableau");
+            }
 
 
-            Console.WriteLine("Veuillez saisir un nombre: ");
-            int nombreSaisi = int.Parse(Console.ReadLine());
-            
-        } 
+        }
     }
 }
