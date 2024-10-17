@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Users>
+    <User id="1">
+        <username>mdevoldere</username>
+        <lastname>DEV</lastname>
+        <firstname>Mike</firstname> <!--aux états peut correspondre aux prénoms-->
+        <birthday format= "yyy-mm-dd"></birthday>1980-05-18<!-- anniversary correspond aux evenements type anniversaire de mariage ou d'entreprises ...-->
+    </User>
+    <User id="2">
+        <username>encreAtika</username>
+        <lastname>ENCRE</lastname>
+        <firstname>ATIKA</firstname> <!--aux états peut correspondre aux prénoms-->
+        <birthday format= "yyy-mm-dd"></birthday>2018-08-07<!-- anniversary correspond aux evenements type anniversaire de mariage ou d'entreprises ...-->
+    </User>
+    <User id="3">
+        <username>littleFace</username>
+        <lastname>Little</lastname>
+        <firstname>Isaac</firstname> <!--aux états peut correspondre aux prénoms-->
+        <birthday format= "yyy-mm-dd"></birthday>2023-05-08<!-- anniversary correspond aux evenements type anniversaire de mariage ou d'entreprises ...-->
+    </User>
+    <User id="4">
+        <username>brotherhood</username>
+        <lastname>BRO</lastname>
+        <firstname>Hood</firstname> <!--aux états peut correspondre aux prénoms-->
+        <birthday format= "yyy-mm-dd"></birthday>1945-06-09<!-- anniversary correspond aux evenements type anniversaire de mariage ou d'entreprises ...-->
+    </User>
+    <User id="5">
+        <username>minicramoisi</username>
+        <lastname>eric</lastname>
+        <firstname>leZ</firstname> <!--aux états peut correspondre aux prénoms-->
+        <birthday format= "yyy-mm-dd"></birthday>1940-01-02<!-- anniversary correspond aux evenements type anniversaire de mariage ou d'entreprises ...-->
+    </User>
+</Users>
