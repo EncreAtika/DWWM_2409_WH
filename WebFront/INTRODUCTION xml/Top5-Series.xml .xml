@@ -1,0 +1,52 @@
+<Top5-Series>
+    <Serie id="1">
+        <serie-titre></serie-tite> 
+        <realisateur/trice></realisateur/trice>
+        <genreDeLaSerie></genreDeLaSerie>
+        <nombreDeSaisons></nombreDeSaisons>
+        <nombreDEpisodes></nombreDEpisodes> 
+        <datePremierEpisode></datePremierEpisode>
+        <dateDernierEpisode></dateDernierEpisode>
+    </Serie>
+
+    <Serie id="2">
+        <serie-titre></serie-tite> 
+        <realisateur/trice></realisateur/trice>
+        <genreDeLaSerie></genreDeLaSerie>
+        <nombreDeSaisons></nombreDeSaisons>
+        <nombreDEpisodes></nombreDEpisodes> 
+        <datePremierEpisode></datePremierEpisode>
+        <dateDernierEpisode></dateDernierEpisode>
+    </Serie>
+
+    <Serie id="3">
+        <serie-titre></serie-tite> 
+        <realisateur/trice></realisateur/trice>
+        <genreDeLaSerie></genreDeLaSerie>
+        <nombreDeSaisons></nombreDeSaisons>
+        <nombreDEpisodes></nombreDEpisodes> 
+        <datePremierEpisode></datePremierEpisode>
+        <dateDernierEpisode></dateDernierEpisode>
+    </Serie>
+
+        <Serie id="4">
+            <serie-titre></serie-tite> 
+            <realisateur/trice></realisateur/trice>
+            <genreDeLaSerie></genreDeLaSerie>
+            <nombreDeSaisons></nombreDeSaisons>
+            <nombreDEpisodes></nombreDEpisodes> 
+            <datePremierEpisode></datePremierEpisode>
+            <dateDernierEpisode></dateDernierEpisode>
+        </Serie>
+            
+            <Serie id="5">
+                <serie-titre></serie-tite> 
+                <realisateur/trice></realisateur/trice>
+                <genreDeLaSerie></genreDeLaSerie>
+                <nombreDeSaisons></nombreDeSaisons>
+                <nombreDEpisodes></nombreDEpisodes> 
+                <datePremierEpisode></datePremierEpisode>
+                <dateDernierEpisode></dateDernierEpisode>
+            </Serie>
+    
+</Top5-Series>
