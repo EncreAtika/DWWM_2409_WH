@@ -1,0 +1,54 @@
+<Top5-Series-selonTelerama>
+    <Serie id="1">
+        <serie-titre> The Wire </serie-tite> 
+        <realisation>David Simon-Ed Burns</realisation>
+        <genreDeLaSerie>Drame policier</genreDeLaSerie>
+        <nombreDeSaisons>5</nombreDeSaisons>
+        <nombreDEpisodes>60</nombreDEpisodes> 
+        <datePremierEpisode format = "yyyy-mm-dd"></datePremierEpisode>2002-06-02
+        <dateDernierEpisode format = "yyyy-mm-dd"></dateDernierEpisode>2008-03-09
+    </Serie>
+
+    <Serie id="2">
+        <serie-titre>The Sopranos</serie-tite> 
+        <realisation>David Chase</realisation>
+        <genreDeLaSerie>Drame</genreDeLaSerie>
+        <nombreDeSaisons>6</nombreDeSaisons>
+        <nombreDEpisodes>86</nombreDEpisodes> 
+        <datePremierEpisode format = "yyyy-mm-dd"></datePremierEpisode>1999-01-10
+        <dateDernierEpisode format = "yyyy-mm-dd"></dateDernierEpisode>2007-06-10
+    </Serie>
+
+    <Serie id="3">
+        <serie-titre>Breaking Bad</serie-tite> 
+        <realisation>Vince Gillian</realisation>
+        <genreDeLaSerie>Thriller</genreDeLaSerie>
+        <nombreDeSaisons>5</nombreDeSaisons>
+        <nombreDEpisodes>62</nombreDEpisodes> 
+        <datePremierEpisode format = "yyyy-mm-dd"></datePremierEpisode>2008_01-20
+        <dateDernierEpisode format = "yyyy-mm-dd"></dateDernierEpisode>2013-09-29
+    </Serie>
+
+        <Serie id="4">
+            <serie-titre>Twin Peaks</serie-tite> 
+            <realisation>Mark Frost et David Lynch</realisation>
+            <genreDeLaSerie>Thriller dramatique</genreDeLaSerie>
+            <nombreDeSaisons>3</nombreDeSaisons>
+            <nombreDEpisodes>48</nombreDEpisodes> 
+            <datePremierEpisodeSaison1Et2 format = "yyyy-mm-dd"></datePremierEpisodeSaison1Et2>1990-04-08
+            <dateDernierEpisodeSaison1Et2 format = "yyyy-mm-dd"></dateDernierEpisodeSaison1Et2>1991-06-10
+            <datePremierEpisodeSaison3 format = "yyyy-mm-dd"></datePremierEpisodeSaison3>2017-05-21
+            <dateDernierEpisodeSaison3 format = "yyyy-mm-dd"></dateDernierEpisodeSaison3>2017-09-03     
+        </Serie>
+       
+        <Serie id="5">
+            <serie-titre>Chernobyl</serie-tite> 
+            <realisation>Craig Mazin</realisation>
+            <genreDeLaSerie>Drame historique</genreDeLaSerie>
+            <nombreDeSaisons>1</nombreDeSaisons>
+            <nombreDEpisodes>5</nombreDEpisodes> 
+            <datePremierEpisode format = "yyyy-mm-dd"></datePremierEpisode>2019-05-06
+            <dateDernierEpisode format = "yyyy-mm-dd"></dateDernierEpisode>2019-06-03
+        </Serie>    
+</Top5-Series-selonTelerama>
+
