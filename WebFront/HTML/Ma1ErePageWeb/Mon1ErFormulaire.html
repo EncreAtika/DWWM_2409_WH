@@ -1,32 +1,66 @@
 <!DOCTYPE html>
-<html lang="fr">
+    <html lang="fr">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <h1>Formulaire d'inscription</h1>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <link rel="stylesheet" href="style.css">
+    </head>
     
-<body>
+    <body>
+        <h1>Formulaire d'inscription</h1>
+        <br>
         <h2>Votre compte configuré en 2 minutes !</h2>
-        <form action="/mon1ErFormulaire" method="post">
-        <li>
-            <label for="name">Nom&nbsp;:</label>
-            <input type="text" id="name" name="Nom"/>
-        </li>
+        <br/>
 
-        <li>
-            <label for="firstname">Nom&nbsp;:</label>
-            <input type="text" id="firstname" name="Prénom"/>
-        </li>
+        <form action="" method="get">
+            <fieldset>
+                <legend>Etat Civil</legend>
+                    <p>
+                        <label for="name">Nom&nbsp;:</label>
+                        <input type="text" id="name" name="nom"required/>
+                    </p>
+
+                    <p>
+                        <label for="firstname">Prénom&nbsp;:</label>
+                        <input type="text" id="firstname" name="prenom"required/>
+                    </p>
              
-        <li>
-            <label for="date">Nom&nbsp;:</label>
-            <input type="text" id="date" name="Date de naissance"/>
-        </li>
-       
-    </form>
+                    <p>
+                         <label for="date">Date de naissance:</label>
+                        <input type="date" id="date" name="date-de-naissance"required/>
+                    </p>
+            </fieldset>
 
-</body>
+            <fieldset>
+                <legend>Informations de contact</legend>
+                    <p>
+                        <label for="email">Adresse email<span class="star">*</span> :</label>
+                        <input type="email" id= "email" pattern="+@example\.com"/>
+                    </p>
+
+                    <p>
+                        <label for="phone">Téléphone :</label>
+                        <input type="tel" id="phone" name="telephone"required/>
+                    </p>           
+            </fieldset>
+                
+
+            <fieldset>
+                <p>
+                    <input type="checkbox" id="checkbox" name = "checkbox" checked/>
+                    <label for="checkbox"> J'accepte les <a href="#">conditions d'utilisation</a> </label>
+                   
+                </p>
+                
+                <p>
+                    <input type="submit" value="S'inscrire"/>
+                </p>
+            </fieldset>
+        
+        </form>
+
+    </body>
 
 </html>
+
