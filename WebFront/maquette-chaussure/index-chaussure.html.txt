@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang=fr>
+<head>
+    <title>Trenders</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>TRENDERS</h1>
+        <nav>
+            <ul>
+                <li>Vêtements</li>
+                <li>Chaussures</li>
+                <li>Accessoires</li>
+                <li>Promo Hiver</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <img src="nike-air-max.jpg" alt="Nike Air Max">
+        <h2>Nike Air Max</h2>
+    </main>
+</body>
+</html>
+
