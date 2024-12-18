@@ -10,14 +10,14 @@ Principales instructions :
 */
 
 /*supprimer la base de donnees si elle existe*/
-DROP DATABASE  IF EXISTS videos;
+DROP DATABASE  IF EXISTS video;
 /*permet de supprimer une structure - ajouter "IF EXISTS" permet d'éviter les erreurs. Si la base de donnée ,n'existe pas il n'y aura pas d'erreurs. */ 
 
 /*CREER UNE BASE DE DONNEES NOMMEES videos*/
-CREATE DATABASE videos;
+CREATE DATABASE video;
 
 /*SELECTIONNER/UTILISER LA BASE DE DONNEES CREEE*/
-USE videos;
+USE video;
 
 -- Les requêtes qui suivent utiliseront
 -- la base de données selectionnées ci-dessus

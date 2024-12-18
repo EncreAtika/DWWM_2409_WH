@@ -1,15 +1,23 @@
 /*commentaire*/
 -- commentaire
+/*Création de langage sous langage SQL : DDL/LDD
+Data definition Language 
+Langage de définition des données
+Principales instructions : 
+-CREATE= crerr une structure (DATABASE, TABLE, VIEW, PROCEDURE, TRIGGER, FUNCTION). 
+-ALTER= Modifier une structure existante.
+-DROP= Supprimer une structure existante.
+*/
 
 /*supprimer la base de donnees si elle existe*/
-DROP DATABASE  IF EXISTS videos;
+DROP DATABASE  IF EXISTS video;
 /*permet de supprimer une structure - ajouter "IF EXISTS" permet d'éviter les erreurs. Si la base de donnée ,n'existe pas il n'y aura pas d'erreurs. */ 
 
-CREATE DATABASE IF NOT EXISTS VIDEOS;
+CREATE DATABASE IF NOT EXISTS VIDEO;
 -- permet de créer une base de données 
 
 /* UTILISER LA BASE DE dONNES CREEE*/
-USE videos;
+USE video;
 
 /*CREER UNE TABLE NOMMEE FILM "film"*/
 CREATE TABLE IF NOT EXISTS film
