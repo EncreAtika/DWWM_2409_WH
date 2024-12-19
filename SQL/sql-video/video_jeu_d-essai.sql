@@ -14,10 +14,10 @@ TRUNCATE : VIDER une table
 USE video;
 
 -- DELETE FROM realisateur; -- supprime toutes les données de la table réalisateur
-TRUNCATE TABLE film_acteur; -- vider la table film_acteur et réinitialise l'auto_increment 
+/*TRUNCATE TABLE film_acteur; -- vider la table film_acteur et réinitialise l'auto_increment 
 TRUNCATE TABLE film; -- vider la table film et réinitialise l'auto_increment 
 TRUNCATE TABLE acteur; -- vider la table acteur et réinitialise l'auto_increment
-TRUNCATE TABLE realisateur; -- vider la table realisateur et réinitialise l'auto_increment
+TRUNCATE TABLE realisateur; -- vider la table realisateur et réinitialise l'auto_increment*/
 
 /* Insertion des données dans la table "réalisateur"*/
 INSERT INTO realisateur
@@ -100,5 +100,4 @@ WHERE acteur_prenom IN ("Jean", "Eva");
 SELECT acteur_prenom, acteur_nom
 FROM acteur
 WHERE acteur_prenom = "Mel" OR acteur_prenom = "Eva";
-
 
