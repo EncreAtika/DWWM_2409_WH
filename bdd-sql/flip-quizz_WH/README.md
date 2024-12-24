@@ -112,3 +112,4 @@ Une équipe est caractérisée par un nom et le nombre de points accumulés lors
 Une partie de quiz connaît les identifiants les 2 équipes et est composé de plusieurs tours de jeu.
 
 Chaque tour de jeu relie une équipe, un quiz et une question liée à la catégorie sélectionnée par l’équipe. On doit connaître, pour chaque tour, le nombre de points gagnés par l’équipe (0 si mauvaise réponse ou absence de réponse).
+
