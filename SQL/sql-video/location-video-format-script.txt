@@ -1,0 +1,86 @@
+CREATE TABLE client(
+   client_id INT AUTO_INCREMENT,
+   client_nom VARCHAR(255) NOT NULL,
+   client_prenom VARCHAR(255) NOT NULL,
+   client_solde DECIMAL(6,2) NOT NULL,
+   client_date_naissance DATE,
+   PRIMARY KEY(client_id)
+);
+
+CREATE TABLE genre(
+   genre_id INT AUTO_INCREMENT,
+   genre_nom VARCHAR(30) NOT NULL,
+   PRIMARY KEY(genre_id),
+   UNIQUE(genre_nom)
+);
+
+CREATE TABLE type(
+   type_public_id INT AUTO_INCREMENT,
+   type_public_intitule VARCHAR(30) NOT NULL,
+   PRIMARY KEY(type_public_id)
+);
+
+CREATE TABLE realisateur(
+   realisateur_id INT AUTO_INCREMENT,
+   realisateur_nom VARCHAR(100) NOT NULL,
+   realisateur_prenom VARCHAR(100) NOT NULL,
+   PRIMARY KEY(realisateur_id)
+);
+
+CREATE TABLE acteur(
+   acteur_idee INT AUTO_INCREMENT,
+   acteur_nom VARCHAR(100) NOT NULL,
+   acteur_prenom VARCHAR(100),
+   PRIMARY KEY(acteur_idee)
+);
+
+CREATE TABLE film(
+   film_id INT AUTO_INCREMENT,
+   film_titre VARCHAR(255),
+   film_duree TIME NOT NULL,
+   realisateur_id INT NOT NULL,
+   PRIMARY KEY(film_id),
+   FOREIGN KEY(realisateur_id) REFERENCES realisateur(realisateur_id)
+);
+
+CREATE TABLE video(
+   video_id INT AUTO_INCREMENT,
+   video_version VARCHAR(2) NOT NULL,
+   film_id INT NOT NULL,
+   PRIMARY KEY(video_id),
+   FOREIGN KEY(film_id) REFERENCES film(film_id)
+);
+
+CREATE TABLE location(
+   client_id INT,
+   film_id INT,
+   location_date_empreint DATETIME NOT NULL,
+   location_timing DECIMAL(5,2) NOT NULL,
+   PRIMARY KEY(client_id, film_id),
+   FOREIGN KEY(client_id) REFERENCES client(client_id),
+   FOREIGN KEY(film_id) REFERENCES film(film_id)
+);
+
+CREATE TABLE categorisation(
+   film_id INT,
+   genre_id INT,
+   PRIMARY KEY(film_id, genre_id),
+   FOREIGN KEY(film_id) REFERENCES film(film_id),
+   FOREIGN KEY(genre_id) REFERENCES genre(genre_id)
+);
+
+CREATE TABLE genre_apprecie(
+   genre_id INT,
+   type_public_id INT,
+   PRIMARY KEY(genre_id, type_public_id),
+   FOREIGN KEY(genre_id) REFERENCES genre(genre_id),
+   FOREIGN KEY(type_public_id) REFERENCES type(type_public_id)
+);
+
+CREATE TABLE Interpretation(
+   film_id INT,
+   acteur_idee INT,
+   PRIMARY KEY(film_id, acteur_idee),
+   FOREIGN KEY(film_id) REFERENCES film(film_id),
+   FOREIGN KEY(acteur_idee) REFERENCES acteur(acteur_idee)
+);
