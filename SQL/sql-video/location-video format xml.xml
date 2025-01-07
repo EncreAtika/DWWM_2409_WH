@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Database>
+   <Name>location-video</Name>
+   <Table>
+      <Name>client</Name>
+      <Column>
+         <Name>client_id</Name>
+         <Type>INT AUTO_INCREMENT</Type>
+      </Column>
+      <Column>
+         <Name>client_nom</Name>
+         <Type>VARCHAR(255)</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <Column>
+         <Name>client_prenom</Name>
+         <Type>VARCHAR(255)</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <Column>
+         <Name>client_solde</Name>
+         <Type>DECIMAL(6,2)</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <Column>
+         <Name>client_date_naissance</Name>
+         <Type>DATE</Type>
+      </Column>
+      <PK>
+         <Key>client_id</Key>
+      </PK>
+   </Table>
+   <Table>
+      <Name>genre</Name>
+      <Column>
+         <Name>genre_id</Name>
+         <Type>INT AUTO_INCREMENT</Type>
+      </Column>
+      <Column>
+         <Name>genre_nom</Name>
+         <Type>VARCHAR(30)</Type>
+         <Property>NOT NULL UNIQUE</Property>
+      </Column>
+      <PK>
+         <Key>genre_id</Key>
+      </PK>
+      <AK>
+         <Key>genre_nom</Key>
+      </AK>
+   </Table>
+   <Table>
+      <Name>type</Name>
+      <Column>
+         <Name>type_public_id</Name>
+         <Type>INT AUTO_INCREMENT</Type>
+      </Column>
+      <Column>
+         <Name>type_public_intitule</Name>
+         <Type>VARCHAR(30)</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <PK>
+         <Key>type_public_id</Key>
+      </PK>
+   </Table>
+   <Table>
+      <Name>realisateur</Name>
+      <Column>
+         <Name>realisateur_id</Name>
+         <Type>INT AUTO_INCREMENT</Type>
+      </Column>
+      <Column>
+         <Name>realisateur_nom</Name>
+         <Type>VARCHAR(100)</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <Column>
+         <Name>realisateur_prenom</Name>
+         <Type>VARCHAR(100)</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <PK>
+         <Key>realisateur_id</Key>
+      </PK>
+   </Table>
+   <Table>
+      <Name>acteur</Name>
+      <Column>
+         <Name>acteur_idee</Name>
+         <Type>INT AUTO_INCREMENT</Type>
+      </Column>
+      <Column>
+         <Name>acteur_nom</Name>
+         <Type>VARCHAR(100)</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <Column>
+         <Name>acteur_prenom</Name>
+         <Type>VARCHAR(100)</Type>
+      </Column>
+      <PK>
+         <Key>acteur_idee</Key>
+      </PK>
+   </Table>
+   <Table>
+      <Name>film</Name>
+      <Column>
+         <Name>film_id</Name>
+         <Type>INT AUTO_INCREMENT</Type>
+      </Column>
+      <Column>
+         <Name>film_titre</Name>
+         <Type>VARCHAR(255)</Type>
+      </Column>
+      <Column>
+         <Name>film_duree</Name>
+         <Type>TIME</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <Column>
+         <Name>realisateur_id</Name>
+         <Type>INT AUTO_INCREMENT</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <PK>
+         <Key>film_id</Key>
+      </PK>
+      <FK>
+         <Key>realisateur_id</Key>
+         <Reference>realisateur(realisateur_id)</Reference>
+      </FK>
+   </Table>
+   <Table>
+      <Name>video</Name>
+      <Column>
+         <Name>video_id</Name>
+         <Type>INT AUTO_INCREMENT</Type>
+      </Column>
+      <Column>
+         <Name>video_version</Name>
+         <Type>VARCHAR(2)</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <Column>
+         <Name>film_id</Name>
+         <Type>INT AUTO_INCREMENT</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <PK>
+         <Key>video_id</Key>
+      </PK>
+      <FK>
+         <Key>film_id</Key>
+         <Reference>film(film_id)</Reference>
+      </FK>
+   </Table>
+   <Table>
+      <Name>location</Name>
+      <Column>
+         <Name>client_id</Name>
+         <Type>INT AUTO_INCREMENT</Type>
+      </Column>
+      <Column>
+         <Name>film_id</Name>
+         <Type>INT AUTO_INCREMENT</Type>
+      </Column>
+      <Column>
+         <Name>location_date_empreint</Name>
+         <Type>DATETIME</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <Column>
+         <Name>location_timing</Name>
+         <Type>DECIMAL(5,2)</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <PK>
+         <Key>client_id, film_id</Key>
+      </PK>
+      <FK>
+         <Key>client_id</Key>
+         <Reference>client(client_id)</Reference>
+      </FK>
+      <FK>
+         <Key>film_id</Key>
+         <Reference>film(film_id)</Reference>
+      </FK>
+   </Table>
+   <Table>
+      <Name>categorisation</Name>
+      <Column>
+         <Name>film_id</Name>
+         <Type>INT AUTO_INCREMENT</Type>
+      </Column>
+      <Column>
+         <Name>genre_id</Name>
+         <Type>INT AUTO_INCREMENT</Type>
+      </Column>
+      <PK>
+         <Key>film_id, genre_id</Key>
+      </PK>
+      <FK>
+         <Key>film_id</Key>
+         <Reference>film(film_id)</Reference>
+      </FK>
+      <FK>
+         <Key>genre_id</Key>
+         <Reference>genre(genre_id)</Reference>
+      </FK>
+   </Table>
+   <Table>
+      <Name>genre_apprecie</Name>
+      <Column>
+         <Name>genre_id</Name>
+         <Type>INT AUTO_INCREMENT</Type>
+      </Column>
+      <Column>
+         <Name>type_public_id</Name>
+         <Type>INT AUTO_INCREMENT</Type>
+      </Column>
+      <PK>
+         <Key>genre_id, type_public_id</Key>
+      </PK>
+      <FK>
+         <Key>genre_id</Key>
+         <Reference>genre(genre_id)</Reference>
+      </FK>
+      <FK>
+         <Key>type_public_id</Key>
+         <Reference>type(type_public_id)</Reference>
+      </FK>
+   </Table>
+   <Table>
+      <Name>Interpretation</Name>
+      <Column>
+         <Name>film_id</Name>
+         <Type>INT AUTO_INCREMENT</Type>
+      </Column>
+      <Column>
+         <Name>acteur_idee</Name>
+         <Type>INT AUTO_INCREMENT</Type>
+      </Column>
+      <PK>
+         <Key>film_id, acteur_idee</Key>
+      </PK>
+      <FK>
+         <Key>film_id</Key>
+         <Reference>film(film_id)</Reference>
+      </FK>
+      <FK>
+         <Key>acteur_idee</Key>
+         <Reference>acteur(acteur_idee)</Reference>
+      </FK>
+   </Table>
+</Database>
