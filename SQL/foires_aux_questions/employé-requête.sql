@@ -81,15 +81,34 @@ GROUP BY D.LOC;
 
 -- 14 Donner département par département masse salariale, nombre d'employés, salaire moyen par type
 -- d'emploi
-SELECT  SUM(SAL) AS "MASSE SALARIALE", COUNT(ENAME) AS "NOMBRE D'EMPLOYES", ROUND(AVG(SAL), 2) AS "MOYENNE DES SALAIRES", D.LOC AS "LOCALISATION"
+SELECT  SUM(SAL+ IFNULL(COMM,0)) AS "MASSE SALARIALE", COUNT(ENAME) AS "NOMBRE D'EMPLOYES", ROUND(AVG(SAL), 2) AS "MOYENNE DES SALAIRES", D.LOC AS "LOCALISATION"
 FROM EMP AS E
 JOIN DEPT AS D ON E.DEPTNO = D.DEPTNO 
-GROUP BY D.LOC;
+GROUP BY D.LOC,job;
 
 -- 15 Même question mais on se limite aux sous-ensembles d'au moins 2 employés 
-SELECT SUM(SAL) AS "MASSE SALARIALE", COUNT(ENAME) AS "NOMBRE D'EMPLOYES", ROUND(AVG(SAL), 2) AS "MOYENNE DES SALAIRES"
-FROM EMP
-WHERE JOB = "SALESMAN" AND JOB = "CLERK";
+SELECT SUM(SAL+ IFNULL(COMM,0)) AS "Masse salariale", COUNT(E.ENAME) AS "Nombre d'employés", ROUND(AVG(SAL), 2) AS "Moyenne des salaires", D.LOC AS "Localisation", E.JOB AS "Type d'emploi"
+FROM EMP AS E
+JOIN DEPT AS D ON E.DEPTNO = D.DEPTNO 
+GROUP BY D.DEPTNO,JOB
+HAVING COUNT(E.ENAME) >= 2;
+
+-- 16  Liste des employés (Nom, département, salaire) de même emploi que JONES
+SELECT E.ENAME AS "Employés", D.LOC as "Département", E.SAL as "salaire"
+FROM EMP AS E
+JOIN DEPT AS D ON E.DEPTNO = D.DEPTNO 
+WHERE  E.JOB = (SELECT JOB FROM EMP WHERE ENAME = "JONES") AND ENAME <>"JONES";
+
+
+
+-- 17 Liste des employés (nom, salaire) dont le salaire est supérieur à la moyenne globale des salaires
+SELECT ENAME, SAL
+FROM EMP 
+GROUP BY SAL
+HAVING SAL>ROUND(AVG(SAL), 2);
+
+SELECT ROUND(AVG(SAL), 2) AS "MOYENNE DES SALAIRES"
+FROM EMP 
 
 
 
