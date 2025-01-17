@@ -1,3 +1,4 @@
+
 -- SQL langage de manipulation de Données
 -- PARTIE 1 :
 -- 1. Donner nom, job, numéro et salaire de tous les employés,
@@ -102,20 +103,77 @@ WHERE  E.JOB = (SELECT JOB FROM EMP WHERE ENAME = "JONES") AND ENAME <>"JONES";
 
 
 -- 17 Liste des employés (nom, salaire) dont le salaire est supérieur à la moyenne globale des salaires
-SELECT ENAME, SAL
+SELECT ENAME AS "NOM" , SAL AS "SALAIRE"
 FROM EMP 
-GROUP BY SAL
-HAVING SAL>ROUND(AVG(SAL), 2);
+WHERE SAL > (SELECT AVG(SAL) FROM EMP);
 
+-- Une autre méthode pour calculer une moyenne :
 SELECT ROUND(AVG(SAL), 2) AS "MOYENNE DES SALAIRES"
-FROM EMP 
+FROM EMP;
 
+/* 18 Création d'une table PROJET (DANS employé_bdd et employe_table) avec comme colonnes numéro de projet (3 chiffres), nom de projet(5
+caractères), budget. Entrez les valeurs suivantes:
+101, ALPHA, 96000
+102, BETA, 82000
+103, GAMMA, 15000*/
+
+-- 19 Ajouter l'attribut numéro de projet à la table EMP et affecter tous les vendeurs du département 30
+-- au projet 101, et les autres au projet 102
+ALTER TABLE EMP ADD NUMERO_DE_PROJET INT;
+-- ALTER TABLE EMP: Cette partie modifie la structure de la table nommée "EMP".
+-- ADD NUMERO_DE_PROJET: Une nouvelle colonne est ajoutée à la table EMP. Cette nouvelle colonne s'appelle "NUMERO_DE_PROJET".
+
+UPDATE EMP -- Modifie les données de la table EMP
+SET NUMERO_DE_PROJET = 101 -- Attribution de la valeur 101 à la Colonne NUMERO_DE_PROJET
+WHERE DEPTNO = 30 -- La valeur 101 est ajoutée dans la colonne "NUMERO_DE_PROJET" pour tous les employés qui sont dans le département 30
+;
+
+UPDATE EMP
+SET NUMERO_DE_PROJET = 102
+WHERE DEPTNO != 30;
+
+-- 20 Créer une vue comportant tous les employés avec nom, job, nom de département et nom de projet
+/*CREATE VIEW FICHE_EMPLOYE AS SELECT * FROM EMP;
+SELECT *
+FROM EMP 
+INNER JOIN EMP on E.DEPTNO = DE.DEPTNO;*/
+
+ 
+
+/*SELECT E.ENAME AS "NOMS", E.JOB AS emploi, D.LOC AS "DEPARTEMENT", NOM_DE_PROJET
+FROM EMP AS E
+JOIN DEPT AS D ON E.DEPTNO = D.DEPTNO ;
+*/
 
 
 /*10.  DANS LA PARTIE 2 Lister les employés ayant le même manager que CLark 
 SELECT ENAME
 FROM EMP
 WHERE EMPNO = (SELECT MGR WHERE ENAME = 'CLARK');*/
+
+
+-- Création d'une procédure avec Franck.
+/*DELIMITER 
+CREATE PROCEDURE SALARIE_SUP ( IN NIV_SALAIRE DECIMAL (8,2))
+BEGIN
+SELECT ENAME, JOB FROM EMP WHERE SAL>=NIV_SALAIRE;
+END
+DELIMITER ;
+
+SET @NIV_SALAIRE := 3000.50;
+CALL SALARIE_SUP (@NIV_SALAIRE);
+
+DELIMITER CREATE PROCEDURE EFFECTIF_JOB(IN JOB_SOUHAITE VARCHAR (50))
+BEGIN 
+SELECT COUNT(EMPNO), JOB, AVG(SAL)
+FROM EMP
+WHERE JOB = JOB_SOUHAITE
+GROUP BY JOB;
+END
+DELIMITER ;
+
+SET @JOB_SOUHAITE:= "SAESMAN";
+CALL EFFECTIF_JOB(@JOB_SOUHAITE);*/
  
 
  
