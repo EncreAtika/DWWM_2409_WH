@@ -1,0 +1,12 @@
+TP BDD NoSQL - Wafae Hammouchi.
+
+1. Donner nom, job, numéro et salaire de tous les employés,
+db.utilisateurs.find({}, {_id:0, ename:1, job:&, empno:1, sal:1})
+
+1.bis :puis seulement des employés du département 10 :
+
+db.utilisateurs.find({deptno:{$eq:10}}, {_id:0, deptno:1, ename:1, job:1, empno:1, sal:1})
+ 
+ ou bien
+
+db.utilisateurs.find({deptno:10}, {_id:0, deptno:1, ename:1, job:1, empno:1, sal:1})
