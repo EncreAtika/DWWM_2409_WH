@@ -47,6 +47,18 @@ INNER JOIN type_projets ON projets.type_projet_id=type_projets.type_projet_id
 GROUP BY projets.type_projet_id;
 
 
+-- Les procédures stockées :
+-- afficher les projets d'un architecte --- Pour un nom d'architecte en variable, donner la référence des projets dont il est responsable (verifier sa fonction)
+
+/* delimiter |
+CREATE PROCEDURE RechercheProjetsArchitecte(IN nom_emp VARCHAR(50))
+BEGIN
+SELECT projet_ref 
+FROM projets
+INNER JOIN employes ON projets.emp_matricule=employes.emp_matricule
+WHERE employes.emp_nom=nom_emp
+END |
+delimiter; */
 
   
   
