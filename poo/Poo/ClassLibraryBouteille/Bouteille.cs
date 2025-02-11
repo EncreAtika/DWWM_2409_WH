@@ -8,53 +8,67 @@ namespace ClassLibraryBouteille
 {
     public class Bouteille
     {
-        private float _contenanceEnLitre;
-        public float contenanceEnLitre { get; set; }
+        private float contenanceEnLitre { get; set; }
 
-        private float _contenuEnLitre;
-        public float contenuEnLitre { get; set; }
+        private float contenuEnLitre { get; set; }
 
-        private bool _estOuverte;
-        public bool estOuverte { get; set; }
-       // private string typeLiquide { get; set; }
+        private bool estOuverte { get; set; }
+
+        private string? typeLiquide { get; set; }
 
 
 
 
         public Bouteille()
-            :this(1f, 1f, false/*, "eau"*/)
+            :this(1f, 1f, false, "eau")
         {
         }
 
-        public Bouteille(float _contenanceEnLitre, float _contenuEnLitre, bool _ouverte/*, string _typeLiquide*/)
+        public Bouteille(float _contenanceEnLitre, float _contenuEnLitre, bool _ouverte, string? _typeLiquide)
         {
             contenanceEnLitre = _contenanceEnLitre;
             contenuEnLitre = _contenuEnLitre;
             estOuverte = _ouverte;
-            /* typeLiquide = _typeLiquide;*/
+            typeLiquide = _typeLiquide;
         }
 
         public Bouteille(Bouteille bouteilleACopier)
-            :this(bouteilleACopier.contenanceEnLitre, bouteilleACopier.contenuEnLitre, bouteilleACopier.estOuverte/*, bouteilleACopier.typeLiquide*/)
+            :this(bouteilleACopier.contenanceEnLitre, bouteilleACopier.contenuEnLitre, bouteilleACopier.estOuverte, bouteilleACopier.typeLiquide)
         {
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + " _contenanceEnLitre=" + contenanceEnLitre + "";
         }
 
         public bool Fermer()
         {
+            bool resultat;
             if (estOuverte)
             {
-                estOuverte = false;
+                resultat = false;
             }
-            return estOuverte;
+            else
+            {
+                resultat = true;
+            }
+            return resultat;
         }
 
         public bool Ouvrir()
         {
+            bool resultat;
             if (!estOuverte)
             {
-                estOuverte = true;
+                resultat = true;
             }
-            return estOuverte;
+            else 
+            { 
+                resultat = false; 
+            }
+            
+            return resultat;
         }
 
         /*
