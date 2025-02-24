@@ -1,0 +1,11 @@
+.styled {
+    border-radius: 5px;
+}
+
+.add {
+    background: rgb(231, 249, 204);
+}
+
+.reset {
+    background: rgb(222, 222, 248);
+}
