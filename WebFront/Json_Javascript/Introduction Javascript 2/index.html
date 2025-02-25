@@ -12,8 +12,12 @@
     <h1>Changer la taille du texte</h1>
     <input class="add-weight" type="button" value="Augmenter la taille du texte" /> 
     <input class="less-weight" type="button" value="Diminuer la taille du texte"/>
-    <span>Taille actuelle : <span id="taille-actuelle"></span> px</span>
-    <p id="texte">
+    <label for="tailleActuelle">Saisie Manuelle :</label>
+    <input type="number" id="taille-actuelle" name="Saisie Manuelle" min = "8" max = "48" value = "16">
+    <br/>
+    <!-- <span>Taille actuelle : <span id="taille-actuelle"></span> px</span> -->
+
+    <p id="texte"> 
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ex sem,<br/>
         rutrum in faucibus id, scelerisque ut turpis. Vivamus et dolor ultrices, varius<br/>
         arcu a, fringilla urna. Nulla tristique libero ac bibendum sollicitudin. Proin <br/>
