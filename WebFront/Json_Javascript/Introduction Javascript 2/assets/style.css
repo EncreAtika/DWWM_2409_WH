@@ -1,5 +1,10 @@
 .add-weight {
     border-radius: 5px;
-    background: rgb(210, 186, 210);
+    background: rgb(199, 203, 226);
 }
 
+.less-weight {
+    border-radius: 5px;
+    background: rgb(235, 207, 201);
+
+}
