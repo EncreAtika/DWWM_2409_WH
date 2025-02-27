@@ -4,10 +4,10 @@
     <!--head contient les métadonnées-->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="exo1_bonjour.js" async></script> 
+    <script src="exo1_bonjour.js" async></script>
     <!--Inclut mon fichier JavaScript externe nommé "exo1_bonjour.js" pour ajouter des fonctionnalités interactives.-->
 
-    <link rel="stylesheet" href="bonjour_1.css">
+    <link rel="stylesheet" href="bonjour_1.css" />
     <!--Lie ma feuille de style CSS externe nommée "bonjour_1.css" pour la mise en forme.-->
 
     <title>Exercice 1 : Bonjour</title>
@@ -16,38 +16,34 @@
   <body>
     <h1>Saisissez un prénom et un âge</h1>
     <form>
-    <!--Création d'un formulaire pour la saisie des données-->
-    <div class="zone-saisie">
+      <!--Création d'un formulaire pour la saisie des données-->
+      <div class="zone-saisie">
+        <div>
+          <label for="prenom-input">Prénom : </label>
+          <!--Une étiquette pour le champ de saisie du prénom-->
+
+          <input type="text" id="prenom-input" />
+          <!--Un champ de saisie de texte pour le prénom-->
+        </div>
 
         <div>
-            <label for="prenom-input">Prénom : </label>
-            <!--Une étiquette pour le champ de saisie du prénom-->
-    
-            <input type="text" id="prenom-input" />
-            <!--Un champ de saisie de texte pour le prénom-->
+          <label for="age-input" required minlenght="1" maxlenght="3"
+            >Âge :
+          </label>
+          <!--Une étiquette pour le champs de saisie de l'âge-->
+
+          <input type="number" id="age-input" />
+          <!--champs de saisie de nombre pour l'age-->
         </div>
-    
-        <div> 
-            <label for="age-input" required minlenght="1" maxlenght="3">Âge : </label>
-            <!--Une étiquette pour le champs de saisie de l'âge-->
-    
-            <input type="number" id="age-input" />
-            <!--champs de saisie de nombre pour l'age-->
-        </div>
+      </div>
 
-    </div>
-     
-    
-     <div class="zone-bouton">
-        <input type="button" class="valid-btn" value="Valider">
+      <div class="zone-bouton">
+        <input type="button" class="valid-btn" value="Valider" />
 
-        <input type="button" class="vider-btn" value="Vider">
-     </div>
-    
-</form> 
- <hr>
-<div id="resultat"></div>
-
-
+        <input type="button" class="vider-btn" value="Vider" />
+      </div>
+    </form>
+    <hr />
+    <div id="resultat"></div>
   </body>
 </html>
