@@ -1,7 +1,17 @@
+body {
+  border: 2px solid rgb(28, 69, 195);
+  margin: 30px  550px ;
+  padding: 30px 20px;
+  font-family: Verdana, sans-serif;
+}
+
+
+
 form {
+  
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 2rem;
 
   .zone-saisie,
   .zone-bouton {
@@ -9,8 +19,22 @@ form {
     gap: 1rem;
   }
 }
-
+ 
 hr {
-    border: 1px solid black;
-    margin: 1rem 0;
+  border: 1px solid black;
+  margin: 1rem 0;
 }
+
+ input {
+  border: 1px solid rgb(28, 69, 195);
+  
+}
+
+.valid-btn, .vider-btn {
+  width: 55px;
+  height: 30px;
+  line-height: 15px;
+  background-color: rgb(237, 237, 192);
+  color: rgb(7, 48, 171);
+}
+
