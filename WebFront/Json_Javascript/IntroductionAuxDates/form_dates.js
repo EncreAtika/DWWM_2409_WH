@@ -20,6 +20,7 @@ leCalcul.addEventListener("click", function () {
   let timeFr = dateSaisie.toLocaleTimeString();
 
   const differenceAnnee = currentDate.getFullYear() - dateSaisie.getFullYear();
+  
   if (currentDate < dateSaisie) {
     renduSaisie.innerHTML = "";
     leResultat.innerHTML = `Date invalide, veuillez recommancer.`;

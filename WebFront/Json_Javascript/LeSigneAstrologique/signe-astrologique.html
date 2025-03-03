@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+        <script src="./astro-signe.js" async></script>     
+        <link rel="stylesheet" href="signe-astro.css" />
+        
+        <title>4.Introduction aux dates - Exercice 1 : Le formulaire</title>
+    
+    </head>
+    <body>
+        <h1>Ma date de naissance</h1>
+        <div>
+            <label for="datetime-local">Date de naissance : </label>
+            <input type="datetime-local" id="birthday"/>     
+            <input type="button" value="Calculer" id="calculer" />           
+        </div>
+        <div>
+            <input type="radio" id="femme" name="feminin" value="Femme" checked />
+            <label for="femme">Femme</label>
+        </div>
+        <div>
+            <input type="radio" id="homme" name="masculin" value="homme" />
+            <label for="homme">Homme</label>
+        </div>    
+            <hr/> 
+            <p id="renduSaisie"></p>
+            <p id="leResultat"></p>
+            <hr/> 
+            <p id="votreSigne"></p>
+            
+    </body>
+</html>

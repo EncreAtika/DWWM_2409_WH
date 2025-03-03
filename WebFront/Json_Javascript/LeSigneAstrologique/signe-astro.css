@@ -1,0 +1,33 @@
+body {
+    border: 2px solid rgb(28, 69, 195);
+    margin: 30px 400px;
+    padding: 30px 20px;
+    font-family: montserra, sans-serif;
+  }
+  input {
+    border: 1px solid rgb(28, 69, 195);
+  }
+  
+  #birthday {
+    width: 180px;
+    height: 20px;
+    line-height: 15px;
+  }
+  #calculer {
+    width: 55px;
+    height: 25px;
+    line-height: 15px;
+    background-color: rgb(237, 237, 192);
+    color: rgb(7, 48, 171);
+  }
+  
+  hr {
+    border: 1px solid black;
+    margin: 1rem 0;
+  }
+  
+  .surlignage {
+    color: blue;
+    font-weight: bold;
+  }
+  
