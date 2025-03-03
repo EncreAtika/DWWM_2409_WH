@@ -8,9 +8,9 @@ input {
   border: 1px solid rgb(28, 69, 195);
 }
 
-#birthdat {
-  width: 55px;
-  height: 25px;
+#birthday {
+  width: 180px;
+  height: 20px;
   line-height: 15px;
 }
 #calculer {
@@ -24,4 +24,9 @@ input {
 hr {
   border: 1px solid black;
   margin: 1rem 0;
+}
+
+.surlignage {
+  color: blue;
+  font-weight: bold;
 }
