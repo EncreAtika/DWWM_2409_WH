@@ -3,18 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="./form_dates.js" async></script>
+    
+    <script src="./form_dates.js" async></script> 
+    <!--Inclut le fichier JavaScript form_dates.js. L'attribut - async - 
+    //permet au script de se charger en parallèle avec le parsing HTML.-->
+    
     <link rel="stylesheet" href="formulaire_dates.css" />
+    <!--//Inclut le fichier CSS formulaire_dates.css pour la mise en forme.-->
+    
     <title>4.Introduction aux dates - Exercice 1 : Le formulaire</title>
   </head>
   <body>
     <h1>Ma date de naissance</h1>
     <div>
       <label for="datetime-local">Date de naissance : </label>
-      <input type="datetime-local" id="birthday"   />
+       <!--Étiquette pour le champ de saisie de la date et de l'heure.-->
+
+      <input type="datetime-local" id="birthday"/>
+      <!--Champ de saisie de type datetime-local permettant de 
+      sélectionner une date et une heure. L'ID birthday est utilisé 
+      pour le cibler en JavaScript.-->
+      
       <input type="button" value="Calculer" id="calculer" />
-    </div>
+      <!--Bouton "Calculer" avec l'ID calculer pour déclencher le 
+      calcul en JavaScript.-->
     
+    </div>
+    </body>
+    <hr/> 
+    <!--Ligne horizontale pour séparer visuellement les sections.-->
+
+    <p id="renduSaisie"></p>
     <p id="leResultat"></p>
+    <!--Paragraphe vide avec - l'ID leResultat - où le résultat du 
+    //calcul sera affiché.-->
+  
   </body>
 </html>

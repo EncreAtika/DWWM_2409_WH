@@ -13,6 +13,7 @@ validBtn.addEventListener("click", (e) => {
     ageInput.value != "" &&
     ageInput.value > 0 &&
     ageInput.value < 120
+    /* Vérifie si les champs de prénom et d'âge sont remplis et si l'âge est un nombre valide (entre 1 et 119).*/
   ) {
     resultat.innerHTML = "";
     const bonjourBloc = document.createElement("p");
