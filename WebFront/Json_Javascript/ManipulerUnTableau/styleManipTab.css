@@ -1,2 +1,56 @@
+:root{
+    --background : #536B78;
+    --cadrePolice :#ACCBE1;
+    --cadreInputTab: #7C98B3;
+    --policeHorsTab: #C1D8E5;
+    --colorInputTab: #637081;
+    
+}
+
+body {
+    background: var(--background);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--cadrePolice);
+}
+
+main{
+    border: 2px solid var(--cadrePolice);
+    padding: 1rem;
+}
+
+h1, h3{
+    margin: 0;
+    padding: .5rem 0rem;
+}
+
+#add-person {
+    border: 1px dashed var(--cadrePolice);
+    margin: 0;
+    padding: .5rem;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+input {
+    border: 2px solid var(--cadreInputTab);
+    background: var(--colorInputTab);
+    color: var(--cadreInputTab);
+    padding: .3rem .5rem;
+}
+
+table,tr,th,td {
+    border: 2px solid var(--cadreInputTab);
+    border-collapse: collapse;
+    padding: .3rem .5rem;
+}
+
+td:last-child{
+    text-align: center;
+}
 
 
