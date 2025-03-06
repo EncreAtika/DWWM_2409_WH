@@ -15,29 +15,28 @@
             <form>
                 <div>
                     <label for="input-firstname">Prénom</label>
-                    <input type="text" id="input-firstname" name="firstname" required minlength="2" maxlength="20" size="20" />
+                    <input type="text" id="input-firstname" name="firstname"  />
                 </div>
                 <div>
                     <label for="input-lastname">Nom</label>
-                    <input type="text" id="input-lastname" name="lastname" required minlength="2" maxlength="20" size="20" />
+                    <input type="text" id="input-lastname" name="lastname"  />
                 </div>
                 <div>
                     <input type="submit" id="btn-add" value="Ajouter"/>
                 </div>                          
             </form>
+            <div>
+                <p id="form-message"></p>
+                
+            </div>
         </div>
-
         <ul></ul>
+        <div>
+            <p id="message"></p>
+        </div>
         
         <table>
-            <thead>
-                <tr>
-                    <th>Nom</th>
-                    <th>Prénom</th>
-                    <th>Email</th>
-                    <th>Supprimer</th>
-                </tr>
-            </thead>
+           
             <tbody></tbody>
         </table>
     </main>

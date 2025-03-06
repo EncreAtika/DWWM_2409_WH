@@ -4,6 +4,10 @@
     --cadreInputTab: #7C98B3;
     --policeHorsTab: #C1D8E5;
     --colorInputTab: #637081;
+    --colorX: #CEE5F2;
+    --colorPoliceListe: #C7DEEC;
+    --error: red; 
+    --success: green;
     
 }
 
@@ -43,14 +47,36 @@ input {
     padding: .3rem .5rem;
 }
 
+#btn-add {
+    color: var(--cadrePolice);
+}
+
 table,tr,th,td {
     border: 2px solid var(--cadreInputTab);
     border-collapse: collapse;
     padding: .3rem .5rem;
+    background-color: var (--colorInputTab);
 }
 
 td:last-child{
     text-align: center;
 }
 
+a {
+    text-decoration: none;
+    color: var(--colorX);
+    font-weight: bold;
+}
 
+.success, .error {
+
+    padding: .5rem;
+}
+
+.success {
+    background: var(--success);
+}
+
+.error {
+    background: var(--error);
+}
