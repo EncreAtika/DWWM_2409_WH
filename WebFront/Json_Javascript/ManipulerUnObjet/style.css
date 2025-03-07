@@ -1,0 +1,31 @@
+:root {
+    --cadreMain: #80B280;
+    --policeH1: #086908;
+    --policeTab: #006400;
+    --intersticeTab: #E3FBE3;
+    --cellules: #90EE90;
+}
+
+main {
+    border: 2px solid var(--cadreMain);
+    padding: 1rem;
+}
+
+h1 {
+    color: var(--policeH1);
+}
+
+label, #input-firstname, #input-lastname, #input-date, #input-salary, #btn-record  {
+    color: var(--policeTab)
+}
+
+ #input-firstname, #input-lastname, #input-date, #input-salary, #btn-record {
+    background: var(--cellules);
+}
+
+table,tr,th,td {
+   
+    border-collapse: collapse;
+    padding: .3rem .5rem;
+   
+}
