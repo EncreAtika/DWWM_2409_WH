@@ -6,8 +6,8 @@
     --colorInputTab: #637081;
     --colorX: #CEE5F2;
     --colorPoliceListe: #C7DEEC;
-    --error: red; 
-    --success: green;
+    --error: rgb(145, 15, 15); 
+    --success: rgb(68, 189, 68);
     
 }
 
@@ -68,6 +68,10 @@ a {
     font-weight: bold;
 }
 
+ul, h3, label, #form-message, #message {
+    color: var(--colorX);
+ }
+
 .success, .error {
 
     padding: .5rem;
@@ -75,6 +79,7 @@ a {
 
 .success {
     background: var(--success);
+ 
 }
 
 .error {
