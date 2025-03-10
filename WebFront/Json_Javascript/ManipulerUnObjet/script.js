@@ -7,9 +7,9 @@ const myEmployee = {
 
 const main = document.querySelector("main");
 const h1 = document.querySelector("h1");
-const table = document.querySelector("table");
-const thead = document.querySelector("thead");
-const tbody= document.querySelector("tbody");
+ const myTable = document.querySelector("table");
+//const thead = document.querySelector("thead");
+// const tbody= document.querySelector("tbody");
 const paragraphe = document.querySelector("#paragraphe");
 const form = document.querySelector("form");
 const label = document.querySelector("label");
@@ -17,10 +17,43 @@ const inputFirstname = document.querySelector("#input-firstname");
 const inputLastname = document.querySelector("#input-lastname");
 const inputDate = document.querySelector("#input-date");
 const inputSalary = document.querySelector("#input-salary");
-const btn = document.querySelector(".btn");
 const btnRecord = document.querySelector("#btn-record");
 
-const myHead = table.createTHead();
+
+const thead = myTable.createTHead();
+const tbody = myTable.createTBody();
+
+myTable.appendChild(thead);
+myTable.appendChild(tbody);
+
+const title = [
+    "Nom", "Prénom", "Date de naissance", "Email", "Salaire"
+]
+const myTheadRow = thead.insertRow();
+
+title.forEach((t) => {
+    let myCell = document.createElement("th");
+    myCell.textContent = t;
+    myTheadRow.appendChild(myCell);
+});
+ 
+const myTBodyRow = tbody.insertRow();
+
+let myCellLastname = document.createElement("td");
+let myCellFirstname = document.createElement("td");
+let myCellBirthday = document.createElement("td");
+let myCellEmail = document.createElement("td");
+let myCellSalary = document.createElement("td");
+
+myCellLastname.textContent = myEmployee.lastname;
+myCellFirstname.textContent = myEmployee.firstname;
+myCellBirthday.textContent = myEmployee.birthday;
+myCellEmail.textContent =  `${myEmployee.firstname.toLowerCase()}.${myEmployee.lastname.toLowerCase()}@example.com`;
+myCellSalary.textContent = myEmployee.salary + " €";
+
+myTBodyRow.append(myCellLastname, myCellFirstname, myCellBirthday, myCellEmail, myCellSalary);
+
+/*const myHead = table.createTHead();
 const titleRow = myHead.insertRow();
 const title = [
     "prenom", "nom", "email", "salaire"
@@ -54,4 +87,5 @@ const display = () => {
         td3.innerText = email;
         td4.innerText = salary;
 
-    })}
+    } )} */
+
