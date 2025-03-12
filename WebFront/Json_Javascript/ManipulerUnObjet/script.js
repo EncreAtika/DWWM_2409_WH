@@ -30,7 +30,6 @@ const tbody = myTable.createTBody();
 myTable.appendChild(thead);
 myTable.appendChild(tbody);
 
-
 const title = [
     "Nom", "Prénom", "Date de naissance", "Email", "Salaire"
 ]
@@ -42,65 +41,57 @@ title.forEach((t) => {
     myTheadRow.appendChild(myCell);
 });
  
-const myTBodyRow = tbody.insertRow();
-
-let myCellLastname = document.createElement("td");
-let myCellFirstname = document.createElement("td");
-let myCellBirthday = document.createElement("td");
-let myCellEmail = document.createElement("td");
-let myCellSalary = document.createElement("td");
-
-myCellLastname.textContent = myEmployee.lastname;
-myCellFirstname.textContent = myEmployee.firstname;
-myCellBirthday.textContent = myEmployee.birthday;
-myCellEmail.textContent =  `${myEmployee.firstname.toLowerCase()}.${myEmployee.lastname.toLowerCase()}@example.com`;
-myCellSalary.textContent = myEmployee.salary + " €";
-
-
-myTBodyRow.append(myCellLastname, myCellFirstname, myCellBirthday, myCellEmail, myCellSalary);
+const display = () => {
+    const myTBodyRow = tbody.insertRow();
+    
+    let myCellLastname = document.createElement("td");
+    let myCellFirstname = document.createElement("td");
+    let myCellBirthday = document.createElement("td");
+    let myCellEmail = document.createElement("td");
+    let myCellSalary = document.createElement("td");
+    
+    myCellLastname.textContent = myEmployee.lastname;
+    myCellFirstname.textContent = myEmployee.firstname;
+    myCellBirthday.textContent = myEmployee.birthday;
+    myCellEmail.textContent =  `${myEmployee.firstname.toLowerCase()}.${myEmployee.lastname.toLowerCase()}@example.com`;
+    myCellSalary.textContent = myEmployee.salary + " €";
+    
+    myTBodyRow.append(myCellLastname, myCellFirstname, myCellBirthday, myCellEmail, myCellSalary);
+}
 
 form.addEventListener("submit", (event) => {
     event.preventDefault(); 
     error.innerText = "";
-    let dateSaisie = inputDate.value;
-    const currentDate = new Date();
-    let birthDate = new Date(dateSaisie);
-    let salarySaisie =  inputSalary.number.value;
-    const currentSalary = new Number;
-    let yourSalary = new Number(salarySaisie);
 
     const reg =/[a-zA-Z-]{2,}/
     
     if(reg.test(inputFirstname.value.trim()))  {
-        errorDate.innerText = "";
+        errorFirstname.innerText = "";
     }
     else{
         errorFirstname.innerText = "Le prénom doit contenir au moins deux lettres et aucun chiffre";
     }
 
     if(reg.test(inputLastname.value.trim()))  {
-        errorDate.innerText = "";
+        errorLastname.innerText = "";
     }
     else{
         errorLastname.innerText = "Le nom doit contenir au moins deux lettres et aucun chiffre";
     }
 
-    if(currentDate < birthDate) {
-        errorDate.innerText = "La date de naissance est obligatoirement dans le passé";
-     }
-        
-    else{
+    if(new Date() > new Date(inputDate.value)) {
         errorDate.innerText = "";
     }
-
-    if (yourSalary<currentSalary){
-        errorSalary.innerText = "le salaire ne peut être inférieur au salaire précédent";
+    else{
+        errorDate.innerText = "La date de naissance est obligatoirement dans le passé";
     }
 
-    else {
+    if (inputSalary.value > myEmployee.salary){
         errorSalary.innerText = "";
+    }
+    else {
+        errorSalary.innerText = "Le salaire ne peut être inférieur au salaire précédent";
     } 
+})
 
-
-    })
-
+display()
