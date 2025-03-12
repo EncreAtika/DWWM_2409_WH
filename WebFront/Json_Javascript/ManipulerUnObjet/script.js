@@ -30,6 +30,7 @@ const tbody = myTable.createTBody();
 myTable.appendChild(thead);
 myTable.appendChild(tbody);
 
+
 const title = [
     "Nom", "Prénom", "Date de naissance", "Email", "Salaire"
 ]
@@ -60,10 +61,13 @@ myTBodyRow.append(myCellLastname, myCellFirstname, myCellBirthday, myCellEmail, 
 
 form.addEventListener("submit", (event) => {
     event.preventDefault(); 
-    error.innerText = ''
+    error.innerText = "";
     let dateSaisie = inputDate.value;
     const currentDate = new Date();
     let birthDate = new Date(dateSaisie);
+    let salarySaisie =  inputSalary.number.value;
+    const currentSalary = new Number;
+    let yourSalary = new Number(salarySaisie);
 
     const reg =/[a-zA-Z-]{2,}/
     
@@ -86,9 +90,17 @@ form.addEventListener("submit", (event) => {
      }
         
     else{
-        errorDate.innerText ="";
+        errorDate.innerText = "";
     }
 
-    
+    if (yourSalary<currentSalary){
+        errorSalary.innerText = "le salaire ne peut être inférieur au salaire précédent";
+    }
+
+    else {
+        errorSalary.innerText = "";
+    } 
+
+
     })
 
