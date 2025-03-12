@@ -7,7 +7,7 @@ const myEmployee = {
 
 const main = document.querySelector("main");
 const h1 = document.querySelector("h1");
- const myTable = document.querySelector("table");
+const myTable = document.querySelector("table");
 //const thead = document.querySelector("thead");
 // const tbody= document.querySelector("tbody");
 const paragraphe = document.querySelector("#paragraphe");
@@ -18,7 +18,11 @@ const inputLastname = document.querySelector("#input-lastname");
 const inputDate = document.querySelector("#input-date");
 const inputSalary = document.querySelector("#input-salary");
 const btnRecord = document.querySelector("#btn-record");
-
+const error = document.querySelector(".error");
+const errorFirstname = document.querySelector(".error-firstname");
+const errorLastname = document.querySelector(".error-lastname");
+const errorDate = document.querySelector(".error-date");
+const errorSalary = document.querySelector(".error-salary");
 
 const thead = myTable.createTHead();
 const tbody = myTable.createTBody();
@@ -51,41 +55,40 @@ myCellBirthday.textContent = myEmployee.birthday;
 myCellEmail.textContent =  `${myEmployee.firstname.toLowerCase()}.${myEmployee.lastname.toLowerCase()}@example.com`;
 myCellSalary.textContent = myEmployee.salary + " €";
 
+
 myTBodyRow.append(myCellLastname, myCellFirstname, myCellBirthday, myCellEmail, myCellSalary);
 
-/*const myHead = table.createTHead();
-const titleRow = myHead.insertRow();
-const title = [
-    "prenom", "nom", "email", "salaire"
-]
+form.addEventListener("submit", (event) => {
+    event.preventDefault(); 
+    error.innerText = ''
+    let dateSaisie = inputDate.value;
+    const currentDate = new Date();
+    let birthDate = new Date(dateSaisie);
 
-title.forEach((t) => {
-    let myCell = document.createElement("th");
-    myCell.textContent = t;
-    titleRow.appendChild(myCell);
-});
+    const reg =/[a-zA-Z-]{2,}/
+    
+    if(reg.test(inputFirstname.value.trim()))  {
+        errorDate.innerText = "";
+    }
+    else{
+        errorFirstname.innerText = "Le prénom doit contenir au moins deux lettres et aucun chiffre";
+    }
 
-const display = () => {
+    if(reg.test(inputLastname.value.trim()))  {
+        errorDate.innerText = "";
+    }
+    else{
+        errorLastname.innerText = "Le nom doit contenir au moins deux lettres et aucun chiffre";
+    }
 
-    tbody.innerText = "";
-    ul.innerText = "";
+    if(currentDate < birthDate) {
+        errorDate.innerText = "La date de naissance est obligatoirement dans le passé";
+     }
+        
+    else{
+        errorDate.innerText ="";
+    }
 
-    people.myEmployee((myEmp, index) => {
-
-        const row = tbody.insertRow(index);
-        const td1 = row.insertCell(0);
-        const td2 = row.insertCell(1);
-        const td3 = row.insertCell(2);
-        const td4 = row.insertCell(3);
-
-        const firstname1 = firstname.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-        const lastname1 = lastname.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-        const email = `${firstname1.toLowerCase()}.${lastname1.toLowerCase()}@example.com`;
-         
-        td1.innerText = firstname;
-        td2.innerText = lastname;
-        td3.innerText = email;
-        td4.innerText = salary;
-
-    } )} */
+    
+    })
 
