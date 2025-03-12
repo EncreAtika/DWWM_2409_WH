@@ -36,9 +36,21 @@ form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    width: 50%;
 }
 
 label {
     display: inline-block;
     width: 100px;
+}
+
+input {
+    width: 150px;
+    padding: .2rem .5rem;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+    padding: 0 0 .5rem;
 }
