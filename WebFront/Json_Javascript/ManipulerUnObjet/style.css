@@ -1,56 +1,65 @@
 :root {
-    --cadreMain: #80B280;
-    --policeH1: #086908;
-    --policeTab: #006400;
-    --intersticeTab: #E3FBE3;
-    --cellules: #90EE90;
+  --cadreMain: #80b280;
+  --policeH1: #086908;
+  --policeTab: #006400;
+  --intersticeTab: #e3fbe3;
+  --cellules: #90ee90;
 }
 
 main {
-    border: 2px solid var(--cadreMain);
-    padding: 1rem;
+  border: 2px solid var(--cadreMain);
+  padding: 1rem;
 }
 
 h1 {
-    color: var(--policeH1);
+  color: var(--policeH1);
 }
 
- #input-firstname, #input-lastname, #input-date, #input-salary, #btn-record  {
-    color: var(--policeTab)
+#input-firstname,
+#input-lastname,
+#input-date,
+#input-salary,
+#btn-record {
+  color: var(--policeTab);
 }
 
- #input-firstname, #input-lastname, #input-date, #input-salary, #btn-record {
-    background-color: var(--cellules);
+#input-firstname,
+#input-lastname,
+#input-date,
+#input-salary,
+#btn-record {
+  background-color: var(--cellules);
 }
 
-table,tr,th,td {
-   
-   background: var(--cellules);
-    padding: .3rem .5rem;
-    border: 2px solid white;
-    border-collapse: collapse;
-   
+table,
+tr,
+th,
+td {
+  background: var(--cellules);
+  padding: 0.3rem 0.5rem;
+  border: 2px solid white;
+  border-collapse: collapse;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 50%;
 }
 
 label {
-    display: inline-block;
-    width: 100px;
+  display: inline-block;
+  width: 100px;
 }
 
 input {
-    width: 150px;
-    padding: .2rem .5rem;
+  width: 150px;
+  padding: 0.2rem 0.5rem;
 }
 
 .error {
-    color: red;
-    font-weight: bold;
-    padding: 0 0 .5rem;
+  color: red;
+  font-weight: bold;
+  padding: 0 0 0.5rem;
 }
