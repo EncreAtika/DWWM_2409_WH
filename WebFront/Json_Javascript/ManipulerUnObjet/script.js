@@ -1,9 +1,9 @@
 const myEmployee = {
-    lastname: "Doe", 
-    firstname: "John", 
-    birthday: "1981-11-12", 
-    salary: 2150
-} 
+    lastname: "Doe",
+    firstname: "John",
+    birthday: "1981-11-12",
+    salary: 2150,
+};
 
 const main = document.querySelector("main");
 const h1 = document.querySelector("h1");
@@ -30,9 +30,7 @@ const tbody = myTable.createTBody();
 myTable.appendChild(thead);
 myTable.appendChild(tbody);
 
-const title = [
-    "Nom", "Prénom", "Date de naissance", "Email", "Salaire"
-]
+const title = ["Nom", "Prénom", "Date de naissance", "Email", "Salaire"];
 const myTheadRow = thead.insertRow();
 
 title.forEach((t) => {
@@ -40,58 +38,82 @@ title.forEach((t) => {
     myCell.textContent = t;
     myTheadRow.appendChild(myCell);
 });
- 
+
 const display = () => {
+    tbody.innerText = "";
+
     const myTBodyRow = tbody.insertRow();
-    
+
     let myCellLastname = document.createElement("td");
     let myCellFirstname = document.createElement("td");
     let myCellBirthday = document.createElement("td");
     let myCellEmail = document.createElement("td");
     let myCellSalary = document.createElement("td");
-    
+
     myCellLastname.textContent = myEmployee.lastname;
     myCellFirstname.textContent = myEmployee.firstname;
     myCellBirthday.textContent = myEmployee.birthday;
-    myCellEmail.textContent =  `${myEmployee.firstname.toLowerCase()}.${myEmployee.lastname.toLowerCase()}@example.com`;
+    myCellEmail.textContent = `${myEmployee.firstname.toLowerCase()}.${myEmployee.lastname.toLowerCase()}@example.com`;
     myCellSalary.textContent = myEmployee.salary + " €";
-    
-    myTBodyRow.append(myCellLastname, myCellFirstname, myCellBirthday, myCellEmail, myCellSalary);
-}
+
+    myTBodyRow.append(
+        myCellLastname,
+        myCellFirstname,
+        myCellBirthday,
+        myCellEmail,
+        myCellSalary
+    );
+};
+
+const errors = {
+    lastname: false,
+    firstname: false,
+    birthday: false,
+    salary: false,
+};
 
 form.addEventListener("submit", (event) => {
-    event.preventDefault(); 
+    event.preventDefault();
     error.innerText = "";
 
-    const reg =/[a-zA-Z-]{2,}/
-    
-    if(reg.test(inputFirstname.value.trim()))  {
+    const reg = /[a-zA-Z-]{2,}/;
+
+    if (reg.test(inputFirstname.value.trim())) {
         errorFirstname.innerText = "";
-    }
-    else{
-        errorFirstname.innerText = "Le prénom doit contenir au moins deux lettres et aucun chiffre";
+        errors.firstname = true;
+    } else {
+        errorFirstname.innerText =
+            "Le prénom doit contenir au moins deux lettres et aucun chiffre";
     }
 
-    if(reg.test(inputLastname.value.trim()))  {
+    if (reg.test(inputLastname.value.trim())) {
         errorLastname.innerText = "";
-    }
-    else{
-        errorLastname.innerText = "Le nom doit contenir au moins deux lettres et aucun chiffre";
+        errors.lastname = true;
+    } else {
+        errorLastname.innerText =
+            "Le nom doit contenir au moins deux lettres et aucun chiffre";
     }
 
-    if(new Date() > new Date(inputDate.value)) {
+    if (new Date() > new Date(inputDate.value)) {
         errorDate.innerText = "";
-    }
-    else{
-        errorDate.innerText = "La date de naissance est obligatoirement dans le passé";
+        errors.birthday = true;
+    } else {
+        errorDate.innerText =
+            "La date de naissance est obligatoirement dans le passé";
     }
 
-    if (inputSalary.value > myEmployee.salary){
+    if (inputSalary.value > myEmployee.salary) {
         errorSalary.innerText = "";
+        errors.salary = true;
+    } else {
+        errorSalary.innerText =
+            "Le salaire ne peut être inférieur au salaire précédent";
     }
-    else {
-        errorSalary.innerText = "Le salaire ne peut être inférieur au salaire précédent";
-    } 
-})
 
-display()
+
+    console.log(errors);
+});
+
+
+
+display();
