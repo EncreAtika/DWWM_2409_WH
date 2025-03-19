@@ -65,6 +65,8 @@ const display = () => {
     );
 };
 
+display();
+
 const errors = {
     lastname: false,
     firstname: false,
@@ -72,12 +74,13 @@ const errors = {
     salary: false,
 };
 
-form.addEventListener("submit", (event) => {
-    event.preventDefault();
+form.addEventListener("submit", (e) => {
+    e.preventDefault()
     error.innerText = "";
 
     const reg = /[a-zA-Z-]{2,}/;
 
+if(inputFirstname.value != '' || inputLastname.value != '' || inputDate.value != '' || inputSalary.value != '') {
     if (reg.test(inputFirstname.value.trim())) {
         errorFirstname.innerText = "";
         errors.firstname = true;
@@ -85,7 +88,7 @@ form.addEventListener("submit", (event) => {
         errorFirstname.innerText =
             "Le prénom doit contenir au moins deux lettres et aucun chiffre";
     }
-
+    
     if (reg.test(inputLastname.value.trim())) {
         errorLastname.innerText = "";
         errors.lastname = true;
@@ -93,7 +96,7 @@ form.addEventListener("submit", (event) => {
         errorLastname.innerText =
             "Le nom doit contenir au moins deux lettres et aucun chiffre";
     }
-
+    
     if (new Date() > new Date(inputDate.value)) {
         errorDate.innerText = "";
         errors.birthday = true;
@@ -101,7 +104,7 @@ form.addEventListener("submit", (event) => {
         errorDate.innerText =
             "La date de naissance est obligatoirement dans le passé";
     }
-
+    
     if (inputSalary.value > myEmployee.salary) {
         errorSalary.innerText = "";
         errors.salary = true;
@@ -109,11 +112,22 @@ form.addEventListener("submit", (event) => {
         errorSalary.innerText =
             "Le salaire ne peut être inférieur au salaire précédent";
     }
+}
 
 
-    console.log(errors);
+    if (
+        errors.firstname == true &&
+        errors.lastname == true &&
+        errors.birthday == true &&
+        errors.salary == true
+    ) {
+        myEmployee.firstname = inputFirstname.value.trim();
+        myEmployee.lastname = inputLastname.value.trim();
+        myEmployee.birthday = inputDate.value.trim();
+        myEmployee.salary = inputSalary.value.trim();
+
+        display();
+    }
+
+    // console.log(errors);
 });
-
-
-
-display();
