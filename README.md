@@ -2,7 +2,7 @@
 ## Formation: 
 DWWM
 ## Début de Formation :
-12 Septembre 2024
+16 Septembre 2024
 ## Fin de Formation :
 22 mai 2026
 ## Période de Stage prévue :
