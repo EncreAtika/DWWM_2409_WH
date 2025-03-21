@@ -9,24 +9,24 @@
     --frameInputAndError: #8e967f;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    width: 50%;
-  }
-
 body {
     background-color: var(--globalBackground);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 main {
     border: 2px solid var(--frameMain);
+    padding: 1rem;
 
 }
 
 h1 {
     color: var(--colorH1);
+    margin: 0;
+}
+
+h4 {
+    margin: 0 0 1rem;
 }
 
 h4,
@@ -37,18 +37,34 @@ a,
 #btn-connexion
 {
  color: var(--formWords);
-}
-#box-form {
-    border: 2px dotted var(--fraimForm);   
-    margin: 1rem;
-    padding: .1rem 2rem .2rem 2rem;
+
 }
 
-#form-error,
-#input-id,
-#input-password,
-#btn-connexion,
-a {
+#box-form {
+    border: 2px dotted var(--fraimForm);   
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 50%;
+  }
+
+input,
+#btn-deconnexion {
     border: 2px, solid,  var(--frameInputAndError);
     background-color: var(--backgroundInputsAndError);
+    text-decoration: none;
+    padding: .2rem .6rem;
+}
+
+#hello {
+    display: inline-block;
+}
+
+#box-table, #form-error {
+    display: none;
 }
