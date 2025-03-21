@@ -1,0 +1,54 @@
+:root {
+    --globalBackground: #D3BDB0;
+    --colorH1: #715b64;
+    --frameMain: #a28c8a;
+    --fraimForm: #aea896;
+    --formWords: #69385c;
+    --inputWords: #715b64;
+    --backgroundInputsAndError: #C1AE9F;
+    --frameInputAndError: #8e967f;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 50%;
+  }
+
+body {
+    background-color: var(--globalBackground);
+}
+
+main {
+    border: 2px solid var(--frameMain);
+
+}
+
+h1 {
+    color: var(--colorH1);
+}
+
+h4,
+label,
+a,
+#hello,
+#form-error
+#btn-connexion
+{
+ color: var(--formWords);
+}
+#box-form {
+    border: 2px dotted var(--fraimForm);   
+    margin: 1rem;
+    padding: .1rem 2rem .2rem 2rem;
+}
+
+#form-error,
+#input-id,
+#input-password,
+#btn-connexion,
+a {
+    border: 2px, solid,  var(--frameInputAndError);
+    background-color: var(--backgroundInputsAndError);
+}
