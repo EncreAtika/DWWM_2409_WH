@@ -11,36 +11,48 @@
 
 <body>
     <main>
-        <h1>Espace membres</h1>
+        <header>
+            <h1>Espace membres</h1>
+            <div id="form-error">
+                <p></p>
+            </div>
+        </header>
 
         <div id="box-form">
             <form>
                 <h4>Identification</h4>
                 <div>
-                    <label for="input-id">Identification</label>
-                    <input type="text" id="input-id" />
+                    <label for="input-identifiant">Identifiant</label>
+                    <input type="text" id="input-identifiant" />
                 </div>
                 <div>
                     <label for="input-password">Mot de Passe</label>
                     <input type="password" id="input-password">
                 </div>
                 <div>
-                    <label for="btn-connexion"></label>
                     <input type="submit" id="btn-connexion" value="Connexion">
                 </div>
-                <div id="form-error">
-                    Identifiant ou mot de passe incorrect
-                </div>
             </form>
-            
-            <div id="box-table">
+        </div>
+
+        <div id="box-table">
+            <div>
                 <p id="hello">Bonjour <span></span></p>
                 <button id="btn-deconnexion">Déconnexion</button>
-                <table>
-                    <tbody></tbody>
-                </table>
-
             </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Date de naissance</th>
+                        <th>Email</th>
+                        <th>Salaire</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
         </div>
     </main>
 
