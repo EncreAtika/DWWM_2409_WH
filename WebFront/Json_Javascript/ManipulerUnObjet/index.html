@@ -1,47 +1,52 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js" async></script>
-    <title>Objet manipulé</title>
-  </head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <script src="script.js" async></script>
+        <title>Objet manipulé</title>
+    </head>
 
-  <body>
-    <main>
-      <h1>Profil de John Doe</h1>
+    <body>
+        <main>
+            <h1>Profil de John Doe</h1>
 
-      <table></table>
+            <table></table>
 
-      <p id="paragraphe">Modifier le profil</p>
+            <p id="paragraphe">Modifier le profil</p>
 
-      <form>
-        <div>
-          <div class="error error-firstname"></div>
-          <label for="input-firstname">Prénom:</label>
-          <input type="text" id="input-firstname" name="firstname" />
-        </div>
-        <div>
-          <div class="error error-lastname"></div>
-          <label for="input-lastname">Nom:</label>
-          <input type="text" id="input-lastname" name="lastname" />
-        </div>
-        <div>
-          <div class="error error-date"></div>
-          <label for="input-date">Date:</label>
-          <input type="date" id="input-date" name="date" />
-        </div>
-        <div>
-          <div class="error error-salary"></div>
-          <label for="input-salary">Salaire:</label>
-          <input type="number" id="input-salary" name="salary" value="0" />
-        </div>
-        <div>
-          <label></label>
-          <input type="submit" id="btn-record" value="Enregistrer" />
-        </div>
-      </form>
-    </main>
-  </body>
+            <form>
+                <div>
+                    <div class="error error-firstname"></div>
+                    <label for="input-firstname">Prénom:</label>
+                    <input type="text" id="input-firstname" name="firstname" />
+                </div>
+                <div>
+                    <div class="error error-lastname"></div>
+                    <label for="input-lastname">Nom:</label>
+                    <input type="text" id="input-lastname" name="lastname" />
+                </div>
+                <div>
+                    <div class="error error-date"></div>
+                    <label for="input-date">Date:</label>
+                    <input type="date" id="input-date" name="date" />
+                </div>
+                <div>
+                    <div class="error error-salary"></div>
+                    <label for="input-salary">Salaire:</label>
+                    <input
+                        type="number"
+                        id="input-salary"
+                        name="salary"
+                        value="0"
+                    />
+                </div>
+                <div>
+                    <label></label>
+                    <input type="submit" id="btn-record" value="Enregistrer" />
+                </div>
+            </form>
+        </main>
+    </body>
 </html>
